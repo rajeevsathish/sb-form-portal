@@ -11,5 +11,20 @@
       <p-dropdown [options]="cities" optionLabel="name"></p-dropdown>
 
     </div>
+
+    <p-dropdown [options]="cities"  optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country">
+      <ng-template pTemplate="selectedItem">
+          <!-- <div class="country-item country-item-value"  *ngIf="selectedCountry">
+              <img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" />
+              <div>{{selectedCountry.name}}</div>
+          </div> -->
+      </ng-template>
+      <ng-template let-country pTemplate="item">
+          <div class="country-item">
+              <div>{{country.name}}</div>
+          </div>
+      </ng-template>
+  </p-dropdown>
+
   </div>
 </div>
